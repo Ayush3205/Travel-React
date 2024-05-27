@@ -13,7 +13,7 @@ export default function ContactForm() {
       email:email,
       password: password
     }
-    axios.post("http://localhost:4000/users/register", data).then(() =>{
+    axios.post("https://travel-node-wzql.onrender.com/users/register", data).then(() =>{
       alert("Form submitted hooray!!");
     })
   }
