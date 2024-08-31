@@ -8,7 +8,7 @@ import { Button } from './Button';
 function Home() {
   return (
     <>
-      <Button>Sample</Button>
+      
       <HeroSection />
       <Cards />
       <Footer />
