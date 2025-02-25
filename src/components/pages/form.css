@@ -2,16 +2,18 @@
     width: 50%;
     margin: 0 auto;
     padding: 2rem;
-    background-color: #f2f2f2;
+    background: linear-gradient(135deg, #0b6623, #228B22, #ADFF2F);
+
+
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
   }
   
   .contact-header {
-    font-size: 2rem;
+    font-size: 4rem;
     margin-bottom: 2rem;
-    color: #3366cc;
+    color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   label {
@@ -19,7 +21,8 @@
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #333;
+    border: #054411;
+    color: #ffffff;
   }
   
   input,
@@ -42,8 +45,8 @@
   }
   
   button[type='submit'] {
-    background-color: #4d90fe;
-    color: #fff;
+    background-color: #f0f3f7;
+    color: #054411;
     border: none;
     padding: 0.5rem 2rem;
     border-radius: 5px;

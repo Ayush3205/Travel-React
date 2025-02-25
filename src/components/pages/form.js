@@ -7,13 +7,14 @@ export default function ContactForm() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const handleSubmit = () =>{
+  const handleSubmit = (e) =>{
+    e.preventDefault();
     const data = {
       name: name,
       email:email,
       password: password
     }
-    axios.post("https://travel-node-wzql.onrender.com/users/register", data).then(() =>{
+    axios.post("http://localhost:4000/api/users/register", data).then(() =>{
       alert("Form submitted hooray!!");
     })
   }
@@ -29,7 +30,7 @@ export default function ContactForm() {
       <label htmlFor='password'>Password:</label>
       <textarea id='password'  value={password} onChange={e => setPassword(e.target.value)} />  
 
-      <button type='submit' onClick={handleSubmit}>Submit</button>
+      <button type='submit' onClick={(e) => handleSubmit(e)}>Submit</button>
 
     </form>
   );
