@@ -7,17 +7,27 @@ export default function ContactForm() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
       name: name,
-      email:email,
+      email: email,
       password: password
-    }
-    axios.post("http://localhost:4000/api/users/register", data).then(() =>{
-      alert("Form submitted hooray!!");
-    })
-  }
+    };
+  
+    axios.post("http://localhost:4000/api/users/register", data)
+      .then(() => {
+        alert("Form submitted hooray!!");
+      })
+      .catch((error) => {
+        if (error.response && error.response.status === 400) {
+          alert("User already exists!");
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      });
+  };
+  
   return (
     <form className='contact-form'>
       <h2 className='contact-header'>Contact Us</h2>
