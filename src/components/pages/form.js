@@ -17,7 +17,7 @@ export default function ContactForm() {
   
     axios.post("http://localhost:4000/api/users/register", data)
       .then(() => {
-        alert("Form submitted hooray!!");
+        alert("We will contact you shortly.");
       })
       .catch((error) => {
         if (error.response && error.response.status === 400) {
@@ -37,7 +37,7 @@ export default function ContactForm() {
       <label htmlFor='email'>Email:</label>
       <input type='email' id='email'  value={email} onChange={e => setEmail(e.target.value)} />
 
-      <label htmlFor='password'>Password:</label>
+      <label htmlFor='password'>Message: </label>
       <textarea id='password'  value={password} onChange={e => setPassword(e.target.value)} />  
 
       <button type='submit' onClick={(e) => handleSubmit(e)}>Submit</button>
