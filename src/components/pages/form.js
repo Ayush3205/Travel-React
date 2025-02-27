@@ -6,13 +6,13 @@ import axios from 'axios';
 export default function ContactForm() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [message, setMessage] = useState("")  // Changed password to message
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
       name: name,
       email: email,
-      password: password
+      message: message  // Updated to send message instead of password
     };
   
     axios.post("http://localhost:4000/api/users/register", data)
@@ -37,11 +37,10 @@ export default function ContactForm() {
       <label htmlFor='email'>Email:</label>
       <input type='email' id='email'  value={email} onChange={e => setEmail(e.target.value)} />
 
-      <label htmlFor='password'>Message: </label>
-      <textarea id='password'  value={password} onChange={e => setPassword(e.target.value)} />  
+      <label htmlFor='message'>Message: </label>  {/* Updated label */}
+      <textarea id='message' value={message} onChange={e => setMessage(e.target.value)} />  {/* Updated input */}
 
       <button type='submit' onClick={(e) => handleSubmit(e)}>Submit</button>
-
     </form>
   );
 }
