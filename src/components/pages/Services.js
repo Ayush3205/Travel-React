@@ -1,5 +1,4 @@
 
-import Cards from "../Cards";
 import CardItem from "../CardItem";
 import "./Services.css" 
 const services = [
